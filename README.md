@@ -1,5 +1,5 @@
 <h1 align="center">Sistema Academia</h1>
-## Descrição do Projeto
+
 <p align="center">Sistema criado para as disciplinas de Linguagens de Programação I e Banco de Dados👨‍💻</p>
 
 <h4 align="center"> 
