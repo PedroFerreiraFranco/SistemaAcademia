@@ -1,18 +1,15 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.25-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.1.0.6537
+-- Versão do servidor:           10.1.35-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win32
+-- HeidiSQL Versão:              11.0.0.5919
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Copiando estrutura do banco de dados para academia
@@ -29,12 +26,7 @@ CREATE TABLE IF NOT EXISTS `cargos` (
   PRIMARY KEY (`codCARGO`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.cargos: ~4 rows (aproximadamente)
-INSERT INTO `cargos` (`codCARGO`, `tipo`, `salario`) VALUES
-	(2, 'Personal', 2499.99),
-	(3, 'Recepcionista', 1500.00),
-	(4, 'Faxineira', 1100.00),
-	(6, 'Avaliador Físico', 2300.00);
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.clientes
 DROP TABLE IF EXISTS `clientes`;
@@ -51,11 +43,9 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   PRIMARY KEY (`codCLIENTES`,`PLANOS_codPLANOS`),
   KEY `fk_CLIENTES_PLANOS1_idx` (`PLANOS_codPLANOS`),
   CONSTRAINT `fk_CLIENTES_PLANOS1` FOREIGN KEY (`PLANOS_codPLANOS`) REFERENCES `planos` (`codPLANOS`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.clientes: ~1 rows (aproximadamente)
-INSERT INTO `clientes` (`codCLIENTES`, `nome`, `cpf`, `dataNascimento`, `telefone`, `email`, `endereco`, `cidade`, `PLANOS_codPLANOS`) VALUES
-	(11, 'Pedro', '173.524.996-36', '27/12/2003', '(35)998085210', 'pedro@gmail.com', 'Sitio Shekinah', '', 5);
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.equipamentos
 DROP TABLE IF EXISTS `equipamentos`;
@@ -67,12 +57,9 @@ CREATE TABLE IF NOT EXISTS `equipamentos` (
   PRIMARY KEY (`codEQUIPAMENTOS`,`FORNECEDORES_codFORNECEDORES`),
   KEY `fk_EQUIPAMENTOS_FORNECEDORES1_idx` (`FORNECEDORES_codFORNECEDORES`),
   CONSTRAINT `fk_EQUIPAMENTOS_FORNECEDORES1` FOREIGN KEY (`FORNECEDORES_codFORNECEDORES`) REFERENCES `fornecedores` (`codFORNECEDORES`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.equipamentos: ~2 rows (aproximadamente)
-INSERT INTO `equipamentos` (`codEQUIPAMENTOS`, `nome`, `descricao`, `FORNECEDORES_codFORNECEDORES`) VALUES
-	(1, 'Esteira', 'Equipamento usado para caminhada ou corrida', 1),
-	(2, 'Cadeira Flexora', 'A Cadeira extensora e flexora é um aparelho da linha Biodelta com sistema de alavancas e pesos livres que permite os dois movimentos básicos do joelho. Na extensão ativa de forma completa os quatro feixes do quadríceps. Na flexão, ativa os posteriores da coxa.', 2);
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.fornecedores
 DROP TABLE IF EXISTS `fornecedores`;
@@ -84,14 +71,9 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
   `email` varchar(100) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   PRIMARY KEY (`codFORNECEDORES`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.fornecedores: ~4 rows (aproximadamente)
-INSERT INTO `fornecedores` (`codFORNECEDORES`, `nome`, `cnpj`, `telefone`, `email`, `endereco`) VALUES
-	(1, 'Lyon', '12345678901234', '32955674', 'lyon@gmail.com', 'Rua Canela de Aracuan, 86'),
-	(2, 'Tonnus Fitness', '7894561230321', '1934419693', 'sac@tonusfitness.com.br', 'Rua Leopoldina Ribeiro Moreira Cezar, 86 - Jd. São Paulo - Limeira-SP'),
-	(3, 'Bold', '014702580369', '99995555', 'contato@boldsnacks.com.br', 'Avenida Artur Bernardes, 657. Centro - Machado - MG'),
-	(4, 'MaxTitanium', '897857', '', 'maxtitanium@maxtitanium.com.br', 'SAC: 0800 3502045');
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.funcionarios
 DROP TABLE IF EXISTS `funcionarios`;
@@ -111,11 +93,9 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   PRIMARY KEY (`codFUNCIONARIOS`,`CARGO_codCARGO`),
   KEY `fk_FUNCIONARIOS_CARGO1_idx` (`CARGO_codCARGO`),
   CONSTRAINT `fk_FUNCIONARIOS_CARGO1` FOREIGN KEY (`CARGO_codCARGO`) REFERENCES `cargos` (`codCARGO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.funcionarios: ~0 rows (aproximadamente)
-INSERT INTO `funcionarios` (`codFUNCIONARIOS`, `nome`, `cpf`, `dataNascimento`, `telefone`, `email`, `endereco`, `cidade`, `carteiraTrabalho`, `dataAdmissao`, `dataDemissao`, `CARGO_codCARGO`) VALUES
-	(1, 'Fernado Souza', '45321456789', '1998-04-16', '988763454', 'fernando@gmail.com', 'Rua Barao Diniz, 233', 'Machado', '564545644', '2022-10-31', '0000-00-00', 2);
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.itemvenda
 DROP TABLE IF EXISTS `itemvenda`;
@@ -130,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `itemvenda` (
   CONSTRAINT `fk_PRODUTOS_has_VENDAS_VENDAS1` FOREIGN KEY (`VENDAS_codVENDA`) REFERENCES `vendas` (`codVENDA`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.itemvenda: ~0 rows (aproximadamente)
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.planos
 DROP TABLE IF EXISTS `planos`;
@@ -141,14 +121,9 @@ CREATE TABLE IF NOT EXISTS `planos` (
   `valor` decimal(10,2) DEFAULT NULL,
   `tipoPlano` varchar(45) NOT NULL,
   PRIMARY KEY (`codPLANOS`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.planos: ~4 rows (aproximadamente)
-INSERT INTO `planos` (`codPLANOS`, `dataInicio`, `dataVencimento`, `valor`, `tipoPlano`) VALUES
-	(5, '0000-00-00', '0000-00-00', 70.00, 'Anual'),
-	(6, '0000-00-00', '0000-00-00', 110.00, 'Mensal'),
-	(7, '0000-00-00', '0000-00-00', 90.00, 'Semestral'),
-	(9, '0000-00-00', '0000-00-00', 85.00, 'Bimestral');
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para procedure academia.proc_alteraCargos
 DROP PROCEDURE IF EXISTS `proc_alteraCargos`;
@@ -162,7 +137,7 @@ DELIMITER ;
 -- Copiando estrutura para procedure academia.proc_alteraClientes
 DROP PROCEDURE IF EXISTS `proc_alteraClientes`;
 DELIMITER //
-CREATE PROCEDURE `proc_alteraClientes`(in codigoClientes int, in nomeCliente varchar(100), in cpfCliente varchar(45), in dataNascimentoCliente date, in telCliente varchar(100), 
+CREATE PROCEDURE `proc_alteraClientes`(in codigoClientes int, in nomeCliente varchar(100), in cpfCliente varchar(45), in dataNascimentoCliente VARCHAR(45), in telCliente varchar(100), 
 in emailCliente varchar(100), in  enderecoCliente varchar(100), in cidadeCliente varchar(100), in codigoPlano int)
 BEGIN
 update clientes set  nome = nomeCliente, cpf = cpfCliente, dataNascimento = dataNascimentoCliente,  
@@ -389,8 +364,9 @@ DROP PROCEDURE IF EXISTS `proc_listaClientes`;
 DELIMITER //
 CREATE PROCEDURE `proc_listaClientes`()
 BEGIN
-select  c.codCLIENTES as "Código", c.nome as "Nome Cliente", c.cpf as CPF, c.dataNascimento as "Data de nascimento", c.email, c.telefone, c.endereco as Endereço, c.cidade, p.tipoPlano as Plano, p.valor as Valor
-from clientes as c inner join planos as p on p.codPLANOS = c.PLANOS_codPLANOS;
+select codCLIENTES, nome, cpf, dataNascimento, telefone, email, endereco, cidade, planos.tipoPlano
+from clientes
+inner join planos on clientes.PLANOS_codPLANOS = planos.codPlanos;
 END//
 DELIMITER ;
 
@@ -417,12 +393,9 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   PRIMARY KEY (`codPRODUTOS`,`FORNECEDORES_codFORNECEDORES`),
   KEY `fk_PRODUTOS_FORNECEDORES1_idx` (`FORNECEDORES_codFORNECEDORES`),
   CONSTRAINT `fk_PRODUTOS_FORNECEDORES1` FOREIGN KEY (`FORNECEDORES_codFORNECEDORES`) REFERENCES `fornecedores` (`codFORNECEDORES`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.produtos: ~2 rows (aproximadamente)
-INSERT INTO `produtos` (`codPRODUTOS`, `nome`, `precoCusto`, `precoVenda`, `margemLucro`, `dataValidade`, `quantidadeEstoque`, `FORNECEDORES_codFORNECEDORES`) VALUES
-	(1, 'Creatina', 65.00, 100.00, 0.00, '2024-12-05', 30.00, 3),
-	(2, 'Whey Protein', 78.00, 100.00, NULL, NULL, NULL, 4);
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela academia.vendas
 DROP TABLE IF EXISTS `vendas`;
@@ -439,12 +412,10 @@ CREATE TABLE IF NOT EXISTS `vendas` (
   KEY `fk_VENDAS_FUNCIONARIOS1_idx` (`FUNCIONARIOS_codFUNCIONARIOS`),
   CONSTRAINT `fk_VENDAS_CLIENTES1` FOREIGN KEY (`CLIENTES_codCLIENTES`) REFERENCES `clientes` (`codCLIENTES`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_VENDAS_FUNCIONARIOS1` FOREIGN KEY (`FUNCIONARIOS_codFUNCIONARIOS`) REFERENCES `funcionarios` (`codFUNCIONARIOS`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela academia.vendas: ~0 rows (aproximadamente)
+-- Exportação de dados foi desmarcado.
 
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

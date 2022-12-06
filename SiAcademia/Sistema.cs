@@ -153,7 +153,7 @@ namespace SiAcademia
                 ConectaBanco conecta = new ConectaBanco();
                 bool retorno = conecta.deletaCliente(idRemover);
                 if (retorno == true)
-                    MessageBox.Show("Banda excluida");
+                    MessageBox.Show("Cliente excluido");
                 else
                     lblmsgerro.Text = conecta.mensagem;
                 ListaClientes();
