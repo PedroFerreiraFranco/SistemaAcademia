@@ -23,7 +23,6 @@ As Ferramentas usada para a criação do sistema foi:
 - [x] Exclusão de Clientes
 - [x] Alteração de Clientes
 - [x] Listagem de Clientes
-- [x] Listagem de Planos
 - [x] Tela de Login
 
 
