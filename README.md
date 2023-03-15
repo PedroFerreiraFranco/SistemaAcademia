@@ -1,5 +1,5 @@
 ![Banner Champions GYM](https://user-images.githubusercontent.com/101286154/205924201-2e5bb740-a79e-4ae1-8eaf-14a4e3a3126e.png)
-<h1 align="center">Sistema criado para as disciplinas de Linguagens de Programação I e Banco de Dados I</h1>
+<h1 align="center">Sistema criado pelos alunos Pedro Franco e Gustavo Alvez para as disciplinas de Linguagens de Programação I e Banco de Dados I</h1>
 
 
 ### LINGUAGENS
